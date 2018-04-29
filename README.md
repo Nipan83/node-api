@@ -104,8 +104,10 @@ On request, a 6-digit verification code email is sent.(Check Your Spam)
 
 Use that code for verification and changing your password.
 
+![alt text](https://i.imgur.com/bErRD1U.png)
+<br />
 
-
+![alt text](https://i.imgur.com/6U8ULgk.png)
 
 ### POST verify Code
 
@@ -119,6 +121,7 @@ This route will return a JWT token if verification code is matched.<br />
 
 All you need to do is pass the information in the request body in key-value pair
 
+![alt text](https://i.imgur.com/4WdQilk.png)
 
 ### POST change password
 
@@ -131,8 +134,10 @@ You can change password here with the information <br />
 
 All you need to do is pass the information in the request body in key-value pair 
 
+![alt text](https://i.imgur.com/AP4nKZB.png)
+<br />
 
-
+![alt text](https://i.imgur.com/jSTxSNw.png)
 
 ## TESTING
 
@@ -140,7 +145,7 @@ All you need to do is pass the information in the request body in key-value pair
 
 	# TESTING of APIs
 	npm test
-	`note: more test cases to be added!`
+	note: more test cases are to be added!
 
 ```
 
