@@ -25,7 +25,7 @@ router.post('/', function(req, res) {
 							}
 						});
 	var mailOptions = {
-						to: 'nipandas83@gmail.com',
+						to: email,
 						from: 'nipandas83@gmail.com',
 						subject: 'Verify Your account!',
 						text: 'You\'re on your way! Let\'s confirm your email address\n\n' + 
