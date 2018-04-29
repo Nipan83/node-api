@@ -41,7 +41,7 @@ Check the APIs using [Postman](https://chrome.google.com/webstore/detail/postman
 
 ## Routes
 
-### POST Register
+### POST Sign up
 
 `http://localhost:3000/user/signup` <br />
 
@@ -90,11 +90,13 @@ Token will also be needed here.
 or <br />
 `https://nipan-nodeapi.herokuapp.com/user/forgotPassword` <br />
 
- This endpoint takes email as the input. 
+ This endpoint takes `email` as the input. 
 
 On request, a 6-digit verification code email is sent.(Check Your Spam)
 
 Use that code for verification and changing your password.
+
+
 
 
 ### POST verify Code
@@ -104,6 +106,10 @@ or <br />
 `https://nipan-nodeapi.herokuapp.com/user/verifyCode`<br />
 
 This route will return a JWT token if verification code is matched.<br />
+
+▪ `email` and `code` <br />
+
+All you need to do is pass the information in the request body in key-value p
 
 
 ### POST change password
