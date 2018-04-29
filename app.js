@@ -13,6 +13,10 @@ var loginUser = require('./routes/user-schema/loginUser');
 var postUser = require('./routes/user-schema/postUser');
 var signout = require('./routes/user-schema/signout');
 var forgotPassword = require('./routes/user-schema/forgotPassword');
+var verifyCode = require('./routes/user-schema/verifyCode');
+var changePassword = require('./routes/user-schema/changePassword');
+
+
 
 
 
@@ -42,6 +46,10 @@ app.use('/user/signup',postUser);
 app.use('/user/login',loginUser);
 app.use('/user/signout',signout);
 app.use('/user/forgotPassword',forgotPassword);
+app.use('/user/verifyCode',verifyCode);
+app.use('/user/changePassword',changePassword);
+
+
 
 
 

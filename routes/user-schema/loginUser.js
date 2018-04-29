@@ -16,15 +16,7 @@ router.use(bodyParser.urlencoded({
 */
 
 router.post('/', function(req, res) {
-
-
-
-
-    var username = req.body.username;
-    //res.cookie('email', req.body.email);
-    //console.log(email);
-
-
+     var username = req.body.username;
     if(!req.body.password){return res.status(404).json('password is not given');}
     if(!req.body.username){return res.status(404).json('username is not given');}
 

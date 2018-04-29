@@ -60,3 +60,8 @@ module.exports.loginUser = function(id, callback) {
 module.exports.findUser = function(id, callback) {
     User.findOne({ "_id": id }, callback);
 }
+
+//login user by email
+module.exports.loginUserByEmail = function(id, callback) {
+    User.findOne({ "email": id }, callback);
+}
