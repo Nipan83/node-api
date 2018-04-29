@@ -134,6 +134,7 @@ All you need to do is pass the information in the request body in key-value pair
 
 	# TESTING of APIs
 	npm test
+	`note: more test cases to be added!`
 
 ```
 
