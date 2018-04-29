@@ -57,6 +57,7 @@ This route allows a user to register herself on the platform with basic informat
 
 All you need to do is pass the information in the request body in key-value pair 
 
+![alt text](https://i.imgur.com/Xj43C1G.png)
 
 ### POST Login
 
@@ -76,6 +77,9 @@ A `JWT TOKEN` will be returned which will be used for further using the API.
 
 The token should be placed in header `key` as `x-access-token` and `value` will be the token.
 
+![alt text](https://i.imgur.com/TLHsOvs.png)
+
+
 ### GET user
 
 `http://localhost:3000/user/details` <br />
@@ -85,6 +89,8 @@ or <br />
 This route returns all the details of the user.
 
 Token will also be needed here.
+
+![alt text](https://i.imgur.com/2DoRS3q.png)
 
 ### POST Forgot Password
 
