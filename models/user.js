@@ -28,15 +28,15 @@ var userSchema = mongoose.Schema({
   },
   gender: {
   	type: String,
-    required: true
+    required: true,
+    uppercase: true,
+    enum: ['MALE', 'FEMALE']
   },
   mobile :{
   type: Number,
   required: true
-  
-  
-},
-active :{
+  },
+  active :{
   type: Boolean,
   default: false
 }
@@ -44,11 +44,6 @@ active :{
 });
 
 var User = module.exports = mongoose.model('user', userSchema);
-
-//Get user
-module.exports.getUser = function(callback, limit) {
-    User.find(callback).limit(limit);
-}
 
 //Post user
 module.exports.postUser = function(data, callback) {
@@ -58,15 +53,10 @@ module.exports.postUser = function(data, callback) {
 
 //login user
 module.exports.loginUser = function(id, callback) {
-    User.findOne({ "email": id }, callback);
+    User.findOne({ "username": id }, callback);
 }
 
 //find user
 module.exports.findUser = function(id, callback) {
-    User.findOne({ "username": id }, callback);
-}
-
-//update user
-module.exports.updateUser = function(id, callback) {
-    User.update({ "_id": id }, callback);
+    User.findOne({ "_id": id }, callback);
 }

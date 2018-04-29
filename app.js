@@ -8,7 +8,11 @@ var mongoose = require('mongoose');
 
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var findUser = require('./routes/user-schema/findUser');
+var loginUser = require('./routes/user-schema/loginUser');
+var postUser = require('./routes/user-schema/postUser');
+var signout = require('./routes/user-schema/signout');
+
 
 var app = express();
 
@@ -31,7 +35,11 @@ var configDB = require('./config.js');
 mongoose.connect(configDB.url); // connect to the database
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/user/details',findUser);
+app.use('/user/signup',postUser);
+app.use('/user/login',loginUser);
+app.use('/user/signout',signout);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
