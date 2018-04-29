@@ -4,9 +4,9 @@ This is a simple REST API server implementation built on top `Node.js` and `Expr
 
 ## Get Started:
 
-`git clone https://github.com/Nipan83/blog-API.git`
+`git clone https://github.com/Nipan83/node-api.git`
 
-`cd blog-API`
+`cd node-api`
 
 ## Running project
 
@@ -33,7 +33,7 @@ You need to have Node.js and npm installed.
 
 ### Heroku 
 
-`https://nipan-blogapi.herokuapp.com/`
+`https://nipan-nodeapi.herokuapp.com/`
 
 ## RUN THE APIs
 
@@ -43,31 +43,30 @@ Check the APIs using [Postman](https://chrome.google.com/webstore/detail/postman
 
 ### POST Register
 
-`http://localhost:3000/register` <br />
+`http://localhost:3000/user/signup` <br />
 
 or <br />
 
-`https://nipan-blogapi.herokuapp.com/register`
+`https://nipan-nodeapi.herokuapp.com/user/signup`
 
 This route allows a user to register herself on the platform with basic information <br />
 
-▪ `username`, `password`, `firstname`, `lastname`, `blogURL` <br />
+▪ `username`, `password`, `firstname`, `lastname`, `gender`, `mobile`,`email` <br />
 
 All you need to do is pass the information in the request body in key-value pair 
 
-![alt text](https://i.imgur.com/yEhygsc.png)
 
 ### POST Login
 
-`http://localhost:3000/login` <br />
+`http://localhost:3000/user/login` <br />
 
 or <br />
 
-`https://nipan-blogapi.herokuapp.com/login` <br />
+`https://nipan-nodeapi.herokuapp.com/user/login` <br />
 
 This route allows a user to log in herself on the platform with basic information <br />
 
-▪ `email` and `password` <br />
+▪ `username` and `password` <br />
 
 All you need to do is pass the information in the request body in key-value pair 
 
@@ -75,61 +74,51 @@ A `JWT TOKEN` will be returned which will be used for further using the API.
 
 The token should be placed in header `key` as `x-access-token` and `value` will be the token.
 
-![alt text](https://i.imgur.com/FHMV8e9.png)
+### GET user
 
-### POST Blogost
-
-`http://localhost:3000/blogpost` <br />
+`http://localhost:3000/user/details` <br />
 or <br />
-`https://nipan-blogapi.herokuapp.com/blogpost` <br />
+`https://nipan-nodeapi.herokuapp.com/user/details`<br />
 
-This route allows a user to create a blog post with following parameters <br />
-
-▪ Title, content <br />
-
-Authentication is handled here using `JWT`
-
-![alt text](https://i.imgur.com/XURrohi.png) <br />
-<br />
-![alt text](https://i.imgur.com/I7u6EaQ.png)
-
-
-### PUT follow/{username}
-
-`http://localhost:3000/follow/{username}`<br />
-or <br />
-`https://nipan-blogapi.herokuapp.com/follow/{username}`<br />
-
-This route allows you to follow new users <br />
-
-![alt text](https://i.imgur.com/DOA5RVB.png)
-
-### GET feed
-
-`http://localhost:3000/feed` <br />
-or <br />
-`https://nipan-blogapi.herokuapp.com/feed` <br />
-
-This route returns all blog posts of users you follow
-<br />
-
-![alt text](https://i.imgur.com/6e14y8D.png)
-
-`NOTE: For viewing own blog post user have to follow himself.`
-
-
-
-### GET users
-
-`http://localhost:3000/getuser` <br />
-or <br />
-`https://nipan-blogapi.herokuapp.com/getuser`<br />
-
-This route returns all the users registered.
-
-This route is for monitoring purpose.
+This route returns all the details of the user.
 
 Token will also be needed here.
+
+### POST Forgot Password
+
+`http://localhost:3000/user/forgotPassword` <br />
+or <br />
+`https://nipan-nodeapi.herokuapp.com/user/forgotPassword` <br />
+
+ This endpoint takes email as the input. 
+
+On request, a 6-digit verification code email is sent.(Check Your Spam)
+
+Use that code for verification and changing your password.
+
+
+### POST verify Code
+
+`http://localhost:3000/user/verifyCode`<br />
+or <br />
+`https://nipan-nodeapi.herokuapp.com/user/verifyCode`<br />
+
+This route will return a JWT token if verification code is matched.<br />
+
+
+### POST change password
+
+`http://localhost:3000/user/changePassword` <br />
+or <br />
+`https://nipan-nodeapi.herokuapp.com/user/changePassword` <br />
+
+You can change password here with the information <br />
+▪ `email` and `newPassword` <br />
+
+All you need to do is pass the information in the request body in key-value pair 
+
+
+
 
 ## TESTING
 
@@ -137,10 +126,6 @@ Token will also be needed here.
 
 	# TESTING of APIs
 	npm test
-
-	# NOTE: Since email field is unique for registering a user. So register test case may fail after running npm test two times.
-
-	# To prevent the error, open test/test.js and change the email value to a new emailId.
 
 ```
 
