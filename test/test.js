@@ -14,47 +14,19 @@ var it = mocha.it
 describe('login', function () {
   it('Generates token for user for any email and password', function (done) {
     request(app)
-            .post('/login')
-            .send({ email: 'nipandas@gmail.com', password: '12345' })
+            .post('/user/login')
+            .send({ username: 'nipandas83', password: 'abcde' })
             .expect(200, done)
             
   })
 })
 
-describe('login', function () {
-  it('Reject request if email and password is not available', function (done) {
-    request(app)
-            .post('/login')
-            .expect(404)
-            .expect(/No user found./, done)
-  })
-})
 
-describe('login', function () {
-  it('Reject request if only email is available', function (done) {
-    request(app)
-            .post('/login')
-            .send({ email: 'nipandas@gmail.com' })
-            .expect(404)
-            .expect(/password is not given/, done)
-  })
-})
-
-describe('login', function () {
-  it('Reject request if only password is available', function (done) {
-    request(app)
-            .post('/login')
-            .send({ password: '12345' })
-            .expect(404)
-            .expect(/No user found./, done)
-  })
-})
-
-describe('register', function () {
+describe('signup', function () {
   it('user registration', function (done) {
     request(app)
-            .post('/register')
-            .send({ email: 'nipandas8@gmail.com', password: '12345', username: 'nipan2', blogURL:'github.com/nipan2', firstname:'nipan', lastname:'das' })
+            .post('/user/signup')
+            .send({ email: 'nipandas@gmail.com', password: 'abcde', username: 'nipan', gender:'Male', firstname:'nipan', lastname:'das', mobile:7896369004 })
             .expect(200, done)
             
   })
