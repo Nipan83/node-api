@@ -109,7 +109,7 @@ This route will return a JWT token if verification code is matched.<br />
 
 ▪ `email` and `code` <br />
 
-All you need to do is pass the information in the request body in key-value p
+All you need to do is pass the information in the request body in key-value pair
 
 
 ### POST change password
