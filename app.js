@@ -12,6 +12,8 @@ var findUser = require('./routes/user-schema/findUser');
 var loginUser = require('./routes/user-schema/loginUser');
 var postUser = require('./routes/user-schema/postUser');
 var signout = require('./routes/user-schema/signout');
+var forgotPassword = require('./routes/user-schema/forgotPassword');
+
 
 
 var app = express();
@@ -39,6 +41,8 @@ app.use('/user/details',findUser);
 app.use('/user/signup',postUser);
 app.use('/user/login',loginUser);
 app.use('/user/signout',signout);
+app.use('/user/forgotPassword',forgotPassword);
+
 
 
 // catch 404 and forward to error handler
